@@ -80,6 +80,40 @@
 
 <p>Check it out <strong><a href="http://128.199.200.152/umbra/multiple.php">here</a>!</strong></p>
 
+<h1>
+<a id="i-have-a-bad-news-though" class="anchor" href="#i-have-a-bad-news-though" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I have a bad news though!</h1>
+
+<p>Umbra JS is natively supported only by <strong>Google Chrome</strong>. :(</p>
+
+<p><strong>But wait! there's a workaround!</strong>
+I don't want you to feel bad for not having Umbra JS in different browsers.
+So I'll tell you how to make it work on other browsers.</p>
+
+<p>You need to download <a href="http://webcomponents.org/">Web Components</a> Polyfills library and include the <strong>webcomponentsjs.js</strong> just above the <strong>umbra.jquery.js</strong> like this:</p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Hey Umbra JS!&lt;/title&gt;
+        &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script src="webcomponentsjs/webcomponents.js"&gt;&lt;/script&gt;
+        &lt;script src="umbra.jquery.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+                $(document).umbra({
+                  tag: {
+                      "my-element" : "&lt;div&gt;My name is: &lt;span&gt;{{content}}&lt;/div&gt;"
+                  }
+                });
+        &lt;/script&gt;
+
+    &lt;/head&gt;
+    &lt;body
+        &lt;my-element&gt;John&lt;/my-element&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>And voila! Umbra JS is now working on other browsers! :D</p>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/WisdomSky/umbra">Umbra JS</a> is maintained by <a href="https://github.com/WisdomSky">WisdomSky</a>.</span>
 
