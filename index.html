@@ -28,7 +28,14 @@
 <hr>
 
 <h3>
-<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use?</h3>
+<a id="what-makes-umbra-js-different-to-other-implementations-like-completely-replacing-the-element-with-a-new-one" class="anchor" href="#what-makes-umbra-js-different-to-other-implementations-like-completely-replacing-the-element-with-a-new-one" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What makes Umbra JS different to other implementations like completely replacing the element with a new one?</h3>
+
+<p>Umbra JS is using a fairly new APIs to do things. That includes detecting if there are newly created/added elements to the DOM and also on how the template element behaves on top of the target custom element.</p>
+
+<p>In Umbra JS, there are no <strong>setIntervals</strong> running forever, and the target elements are not really replaced. That means, Umbra JS is fast since it is using native implementations. Whenever you add a new custom element into the DOM dynamically, the template is automatically applied to the element, so there's no weird behaviors like the users are able to see the original element then replaced with the template. Umbra JS also have few methods to enable you to change templates on the fly and quickly update the existing custom elements with the new template and to totally destroy Umbra JS instance like nothing happened!</p>
+
+<h1>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use?</h1>
 
 <p><strong>Duhh?! It's never been so easy!</strong></p>
 
@@ -112,7 +119,36 @@
 <p>Check it out <strong><a href="http://128.199.200.152/umbra/multiple.php">here</a>!</strong></p>
 
 <h1>
-<a id="i-have-a-bad-news-though" class="anchor" href="#i-have-a-bad-news-though" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I have a bad news though!</h1>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods</h1>
+
+<p>Umbra JS have <strong>tag</strong> and <strong>destroy</strong> methods.</p>
+
+<h3>
+<a id="tag" class="anchor" href="#tag" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tag</h3>
+
+<p>The tag method is used to change the registered template on the fly. Any change to the template using the tag method, the change will automatically propagate to all affected elements!</p>
+
+<p>usage:</p>
+
+<pre><code>        &lt;script&gt;
+                $(document).umbra("tag", "my-element", "&lt;div&gt;This is a new {{content}}!&lt;/div&gt;");
+        &lt;/script&gt;
+</code></pre>
+
+<h3>
+<a id="destroy" class="anchor" href="#destroy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Destroy</h3>
+
+<p>The destroy method is used to destroy the Umbra JS instance and remove some associated data.</p>
+
+<p>usage:</p>
+
+<pre><code>        &lt;script&gt;
+                $(document).umbra("destroy");
+        &lt;/script&gt;
+</code></pre>
+
+<h1>
+<a id="bad-news" class="anchor" href="#bad-news" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bad News!</h1>
 
 <p>Umbra JS is natively supported only by <strong>Google Chrome</strong>. :(</p>
 
