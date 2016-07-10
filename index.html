@@ -50,7 +50,34 @@
 &lt;/script&gt;
 </code></pre>
 
-<p>Let's combine them all instead:</p>
+<p>Umbra JS also supports external file templates.</p>
+
+<pre><code>&lt;script&gt;
+         $(document).umbra({
+              tag: {
+                  "my-element" : "external-template.html"
+              }
+         });
+&lt;/script&gt;
+</code></pre>
+
+<p>And also supports closures for much more advanced manipulation. The context of the closure is the current custom element being processed. <strong>Take note that the closure should return either html text or jquery object!</strong></p>
+
+<pre><code>&lt;script&gt;
+         $(document).umbra({
+              tag: {
+                  "my-element" : function() {
+                        var $sample = $("&lt;div&gt;");
+
+                        $sample.html( "My name is: "+ $(this).html() );
+
+                        return $sample;
+              }
+         });
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>Now, let's combine html and javascript part:</strong></p>
 
 <pre><code>&lt;html&gt;
     &lt;head&gt;
